@@ -1,0 +1,37 @@
+# Blackout — monochrome white/gray terminal
+# Simulates old single-color monochrome monitors (white/gray phosphor, no RGB)
+# All ANSI colors map to white/gray shades, since the real hardware
+# could only display one hue — same idea as amber.toml, but grayscale
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "#0A0A0A"
+foreground = "#E0E0E0"
+
+[colors.cursor]
+text = "#0A0A0A"
+cursor = "#FFFFFF"
+
+# Every "color" below is white/gray — normal = dimmer, bright = full intensity
+# This mimics hardware that physically could not render other hues
+[colors.normal]
+black   = "#0A0A0A"
+red     = "#AAAAAA"
+green   = "#AAAAAA"
+yellow  = "#AAAAAA"
+blue    = "#AAAAAA"
+magenta = "#AAAAAA"
+cyan    = "#AAAAAA"
+white   = "#AAAAAA"
+
+[colors.bright]
+black   = "#555555"
+red     = "#FFFFFF"
+green   = "#FFFFFF"
+yellow  = "#FFFFFF"
+blue    = "#FFFFFF"
+magenta = "#FFFFFF"
+cyan    = "#FFFFFF"
+white   = "#FFFFFF"

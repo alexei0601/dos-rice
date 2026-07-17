@@ -1,0 +1,35 @@
+# Amber — monochrome amber terminal
+# Simulates old single-color business terminals (no RGB, only amber phosphor)
+# All ANSI colors map to the same amber hue at different intensities,
+# since the real hardware could only display one color
+
+[colors.primary]
+background = "#1A0F00"
+foreground = "#FFB000"
+
+[colors.cursor]
+text = "#1A0F00"
+cursor = "#FFB000"
+
+# Every "color" below is amber — normal = dimmer, bright = full intensity
+# This mimics hardware that physically could not render other hues
+
+[colors.normal]
+black   = "#1A0F00"
+red     = "#B37700"
+green   = "#B37700"
+yellow  = "#B37700"
+blue    = "#B37700"
+magenta = "#B37700"
+cyan    = "#B37700"
+white   = "#B37700"
+
+[colors.bright]
+black   = "#402D00"
+red     = "#FFB000"
+green   = "#FFB000"
+yellow  = "#FFB000"
+blue    = "#FFB000"
+magenta = "#FFB000"
+cyan    = "#FFB000"
+white   = "#FFB000"
