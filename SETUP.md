@@ -11,3 +11,10 @@ show broken colors (e.g. plain white text where amber is expected).
 
 This project uses Starship for the prompt instead, which respects
 the active Alacritty color theme.
+
+## Starship prompt
+
+1. Install: `sudo pacman -S starship`
+2. Add to `~/.bashrc`: `eval "$(starship init bash)"`
+3. Until the install script exists, copy the config manually:
+   `cp starship.toml ~/.config/starship.toml`
