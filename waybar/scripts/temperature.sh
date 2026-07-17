@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 temp=""
+WARNING=80
+CRITICAL=90
 
 for zone in /sys/class/thermal/thermal_zone*; do
     type=$(<"$zone/type")
@@ -15,7 +17,13 @@ for zone in /sys/class/thermal/thermal_zone*; do
 done
 
 if [ -n "$temp" ]; then
-    echo "$temp"
+    if [ "$temp" -ge "$CRITICAL" ]; then
+        echo "CRITICAL ${temp}°C"
+    elif [ "$temp" -ge "$WARNING" ]; then 
+        echo "WARNING ${temp}°C"
+    else 
+        echo "OK ${temp}°C"
+    fi
 else
     echo "N/A"
 fi
