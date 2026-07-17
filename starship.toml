@@ -1,0 +1,17 @@
+# DOSrice — Starship prompt config
+# Unix-style paths (no backslashes), DOS-inspired ">" prompt character.
+# Colors use ANSI palette indices (fg:N) so the prompt follows whichever
+# Alacritty theme is active (dos-blue, amber, or blackout).
+
+format = """$directory$character"""
+
+[directory]
+format = "[$path]($style) "
+style = "bold fg:15"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[character]
+success_symbol = "[>](bold fg:15)"
+error_symbol = "[>](bold fg:9)"
+vimcmd_symbol = "[<](bold fg:15)"
