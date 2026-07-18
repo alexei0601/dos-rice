@@ -1,0 +1,125 @@
+* {
+    font-family: Terminus;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    box-shadow: inset 0 -3px transparent;
+}
+
+button:hover {
+    background: #111111;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+
+/* Workspace numbers */
+
+#workspaces {
+    margin: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: #111111;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* General module spacing */
+
+#cpu,
+#custom-temperature,
+#custom-memory,
+#custom-volume,
+#custom-network,
+#user,
+#window {
+    padding: 0 10px;
+}
+
+
+/* Host */
+
+#user {
+    color: #ffffff;
+}
+
+
+/* CPU */
+
+#cpu {
+    background-color: #00aa00;
+    color: #000000;
+}
+
+
+/* Memory */
+
+#custom-memory {
+    background-color: #5500aa;
+    color: #ffffff;
+}
+
+
+/* Temperature */
+
+#custom-temperature {
+    background-color: #aa5500;
+    color: #ffffff;
+}
+
+#custom-temperature.critical {
+    background-color: #aa0000;
+}
+
+
+/* Volume */
+
+#custom-volume {
+    background-color: #aaaa00;
+    color: #000000;
+}
+
+
+/* Network */
+
+#custom-network {
+    background-color: #0000aa;
+    color: #ffffff;
+}
+
+
+/* Window title */
+
+#window {
+    color: #ffffff;
+}
+
+
+/* Tooltip */
+
+tooltip {
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 5px;
+}
