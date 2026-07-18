@@ -1,11 +1,7 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "height": 20,
+    "spacing": 4,
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -18,78 +14,60 @@
         "custom/network",
         "sway/window"
     ],
-    "modules-right": [
-    ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "niri/workspaces": {
-        "format": "{icon} {windows}",
-        "format-window-separator": " ",
-        "window-rewrite-default": "",
-        "window-rewrite": {
-            "app_id<firefox>": "",
-            "app_id<dolphin>": "",
-            "app_id<org.gnome.Nautilus>": "",
-            "app_id<thunar>": "",
-            "app_id<foot>": ""
-        },
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "active": "",
-            "default": ""
+    "modules-right": [],
+    // Workspaces
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5
         }
     },
+    // Host
     "user": {
-	    "format": "HOST: {user}"
+        "format": "HOST: {user}",
+        "tooltip": false
     },
+    // CPU
     "cpu": {
         "format": "CPU: {usage}%",
-        "interval": 2
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "CPU usage: {usage}%"
     },
+    // Temperature
     "custom/temperature": {
         "exec": "$HOME/.config/waybar/scripts/temperature.sh",
         "interval": 2,
-        "format": "TEMP: {}"
+        "format": "TEMP: {}",
+        "tooltip": true
     },
+    // Memory
     "custom/memory": {
         "exec": "$HOME/.config/waybar/scripts/memory.sh",
         "interval": 5,
-        "format": "MEM: {}"
+        "format": "MEM: {}",
+        "tooltip": true
     },
+    // Volume
     "custom/volume": {
         "exec": "$HOME/.config/waybar/scripts/volume.sh",
         "interval": 0,
         "format": "VOL: {}",
+        "tooltip": true,
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.0",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
     },
+    // Network
     "custom/network": {
         "exec": "$HOME/.config/waybar/scripts/network.sh",
         "interval": 1,
         "return-type": "json",
         "format": "{}",
         "tooltip": true,
-        "on-click": "alacritty -e nmtui"
+        "on-click": "alacritty --class nmtui-scratchpad -e nmtui"
     }
 }
