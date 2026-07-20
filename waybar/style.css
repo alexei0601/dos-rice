@@ -9,6 +9,9 @@ window#waybar {
     border-bottom: 1px solid #ffffff;
 }
 
+
+/* Buttons */
+
 button {
     border: none;
     border-radius: 0;
@@ -16,12 +19,12 @@ button {
 }
 
 button:hover {
-    background: #111111;
+    background: #333333;
     box-shadow: inset 0 -3px #ffffff;
 }
 
 
-/* Workspace numbers */
+/* Workspaces */
 
 #workspaces {
     margin: 0 4px;
@@ -34,7 +37,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: #111111;
+    background: #333333;
 }
 
 #workspaces button.active,
@@ -46,12 +49,15 @@ button:hover {
 
 /* General module spacing */
 
+#user,
 #cpu,
 #custom-temperature,
 #custom-memory,
 #custom-volume,
 #custom-network,
-#user,
+#battery,
+#custom-uptime,
+#clock,
 #window {
     padding: 0 10px;
 }
@@ -60,57 +66,94 @@ button:hover {
 /* Host */
 
 #user {
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
 }
 
 
 /* CPU */
 
 #cpu {
-    background-color: #00aa00;
+    background: #d9d9d9;
     color: #000000;
-}
-
-
-/* Memory */
-
-#custom-memory {
-    background-color: #5500aa;
-    color: #ffffff;
 }
 
 
 /* Temperature */
 
 #custom-temperature {
-    background-color: #aa5500;
-    color: #ffffff;
+    background: #aaaaaa;
+    color: #000000;
 }
 
 #custom-temperature.critical {
-    background-color: #aa0000;
+    background: #555555;
+    color: #ffffff;
+}
+
+
+/* Memory */
+
+#custom-memory {
+    background: #888888;
+    color: #000000;
 }
 
 
 /* Volume */
 
 #custom-volume {
-    background-color: #aaaa00;
-    color: #000000;
+    background: #666666;
+    color: #ffffff;
 }
 
 
 /* Network */
 
 #custom-network {
-    background-color: #0000aa;
+    background: #444444;
     color: #ffffff;
+}
+
+
+/* Battery */
+
+#battery {
+    background: #bbbbbb;
+    color: #000000;
+}
+
+#battery.warning {
+    background: #666666;
+    color: #ffffff;
+}
+
+#battery.critical {
+    background: #222222;
+    color: #ffffff;
+}
+
+
+/* Uptime */
+
+#custom-uptime {
+    background: #333333;
+    color: #ffffff;
+}
+
+
+/* Clock */
+
+#clock {
+    background: #ffffff;
+    color: #000000;
 }
 
 
 /* Window title */
 
 #window {
+    background: #000000;
     color: #ffffff;
 }
 

@@ -2,9 +2,11 @@
 {
     "height": 20,
     "spacing": 4,
+
     "modules-left": [
         "hyprland/workspaces"
     ],
+
     "modules-center": [
         "user",
         "cpu",
@@ -12,9 +14,15 @@
         "custom/memory",
         "custom/volume",
         "custom/network",
+        "battery",
+        "custom/uptime",
         "sway/window"
     ],
-    "modules-right": [],
+
+    "modules-right": [
+        "clock"
+    ],
+
     // Workspaces
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -24,11 +32,13 @@
             "*": 5
         }
     },
+
     // Host
     "user": {
         "format": "HOST: {user}",
         "tooltip": false
     },
+
     // CPU
     "cpu": {
         "format": "CPU: {usage}%",
@@ -36,6 +46,7 @@
         "tooltip": true,
         "tooltip-format": "CPU usage: {usage}%"
     },
+
     // Temperature
     "custom/temperature": {
         "exec": "$HOME/.config/waybar/scripts/temperature.sh",
@@ -43,6 +54,7 @@
         "format": "TEMP: {}",
         "tooltip": true
     },
+
     // Memory
     "custom/memory": {
         "exec": "$HOME/.config/waybar/scripts/memory.sh",
@@ -50,6 +62,7 @@
         "format": "MEM: {}",
         "tooltip": true
     },
+
     // Volume
     "custom/volume": {
         "exec": "$HOME/.config/waybar/scripts/volume.sh",
@@ -61,6 +74,7 @@
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.0",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
     },
+
     // Network
     "custom/network": {
         "exec": "$HOME/.config/waybar/scripts/network.sh",
@@ -69,5 +83,41 @@
         "format": "{}",
         "tooltip": true,
         "on-click": "alacritty --class nmtui-scratchpad -e nmtui"
+    },
+
+    // Battery
+    "battery": {
+        "format": "BAT: {capacity}%",
+        "format-charging": "BAT: {capacity}% [CHG]",
+        "format-full": "BAT: 100% [FULL]",
+        "format-plugged": "BAT: {capacity}% [AC]",
+        "format-alt": "BAT: {time}",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+
+    // Uptime
+    "custom/uptime": {
+        "exec": "uptime -p | sed 's/^up //'",
+        "interval": 60,
+        "format": "UP: {}",
+        "tooltip": true,
+        "tooltip-format": "System uptime: {}"
+    },
+
+    // Clock
+    "clock": {
+        "format": "TIME: {:%H:%M:%S}",
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "<big>{:%A, %d de %B de %Y}</big>\n<tt>{calendar}</tt>"
+    },
+
+    // Window title
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50
     }
 }
